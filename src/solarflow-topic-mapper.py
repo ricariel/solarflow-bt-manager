@@ -86,7 +86,7 @@ def run():
     global devices
     global sf_product_id
     client = connect_mqtt()
-    client.loop_start()
+    client.loop_forever()
 
     while True:
         for device in devices:
