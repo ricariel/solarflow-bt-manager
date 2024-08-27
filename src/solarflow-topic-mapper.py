@@ -58,13 +58,13 @@ def connect_mqtt() -> mqtt_client:
 def subscribe(client: mqtt_client):
     client.subscribe(report_topic)
     client.on_message = on_message
-    #client.publish(f'iot/{sf_product_id}/{sf_device_id}/properties/read','{"properties": ["getAll"]}')
+    client.publish(f'iot/{sf_product_id}/{sf_device_id}/properties/read','{"properties": ["getAll"]}')
 
 def run():
     global devices
     global sf_product_id
     client = connect_mqtt()
-    client.loop_start()
+    client.loop_forever()
 
     while True:
         for device in devices:
@@ -109,7 +109,7 @@ def main(argv):
         sys.exit()
     else:
         log.info(f'Solarflow Hub: {sf_product_id}/{sf_device_id}')
-        report_topic = f'/{sf_product_id}/+/properties/report'
+        report_topic = f'/{sf_product_id}/{sf_device_id}/properties/report'
         log.info(f'Reporting topic: {report_topic}')
 
     run()
