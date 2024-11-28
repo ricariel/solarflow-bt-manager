@@ -5,5 +5,5 @@ WORKDIR /
 
 COPY solarflow-topic-mapper.py /
 
-RUN pip install paho-mqtt
+RUN pip3 install paho-mqtt==2.0.0
 ENTRYPOINT ["python","solarflow-topic-mapper.py"]
