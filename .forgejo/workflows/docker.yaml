@@ -30,7 +30,7 @@ jobs:
         uses: https://github.com/actions/checkout@v4
         with:
           ref: ${{ steps.get-latest-tag.outputs.tag }}
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
 
       - name: Generate tags
         id: meta
