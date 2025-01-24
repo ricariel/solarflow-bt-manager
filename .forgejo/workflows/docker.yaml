@@ -24,7 +24,7 @@ jobs:
 
       - uses: https://github.com/actions-ecosystem/action-get-latest-tag@v1
         id: get-latest-tag
-        if: ${{ github.event_name == 'schedule' or github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
 
       - name: Checkout Repo
         uses: https://github.com/actions/checkout@v4
