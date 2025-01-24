@@ -40,12 +40,12 @@ jobs:
             docker.io/ricariel/${{ vars.IMAGE_NAME }}
             git.zyria.de/pyrox/${{ vars.IMAGE_NAME }}
           tags: |
-            type=schedule,pattern=${{ steps.get-latest-tag.outputs.tag }}
+            #type=schedule,pattern=${{ steps.get-latest-tag.outputs.tag }}
             type=ref,event=branch
             type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
+            type=semver,pattern={{version}},value=${{ steps.get-latest-tag.outputs.tag }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ steps.get-latest-tag.outputs.tag }}
+            type=semver,pattern={{major}},value=${{ steps.get-latest-tag.outputs.tag }}
         env:
           DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
 
