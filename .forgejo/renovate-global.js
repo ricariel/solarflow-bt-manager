@@ -3,7 +3,7 @@ module.exports = {
   "endpoint": "https://git.zyria.de/api/v1/",
   "gitAuthor": "Renovate Bot <renovate@zyria.de>",
   "username": "pyrox",
-  "autodiscover": true,
+  "autodiscover": false,
   "onboardingConfig": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
