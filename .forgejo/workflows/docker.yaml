@@ -7,10 +7,6 @@ on:
       - 'master'
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - 'main'
-      - 'master'
   schedule:
     - cron: '15 6,18 * * *'
   workflow_dispatch:
