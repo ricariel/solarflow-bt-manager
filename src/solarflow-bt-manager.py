@@ -133,8 +133,10 @@ async def run(broker=None, port=None, info_only: bool = False, connect: bool = F
 
     if SF_PRODUCT_ID == '73bkTV':
       product_class = "zenp"
-    elif SF_PRODUCT_ID == 'A8yh63': 
-      product_class = "zenh"
+    elif SF_PRODUCT_ID == 'A8yh63':
+      #product_class = "zenh"
+      #product_class = "zenh1_72" # hub2000-2
+      product_class = "zenh1_76" # hub2000
     elif SF_PRODUCT_ID == 'yWF7hV':
       product_class = "zenr"
     elif SF_PRODUCT_ID == 'ja72U0ha':
