@@ -72,6 +72,7 @@ To gather telemetry data you will need to run the BT manager tool as a service o
 To get basic information about the hub (without performing any changes) run the script with the -i option only:
 
 ```
+$ export SF_PRODUCT_ID="your_sf_productid"
 $ python3 solarflow-bt-manager.py -i
 ```
 
@@ -94,6 +95,12 @@ Take a note of the device hardware address, the device ID, and the serial number
 To continously start reporting telemetry data to a local MQTT broker you can start the script with the -b option. (note: no user authentication for MQTT implemented yet).
 
 ```
+$ export WIFI_PWD="your_wifi_password"
+$ export SF_DEVICE_ID="your_sf_deviceid"
+# your_sf_productid is 73bkTV for Hub1200 or A8yh63 for Hub2000 and yWF7hV for AIO2400.
+$ export SF_PRODUCT_ID="your_sf_productid"
+$ export MQTT_USER="your mqtt user"
+$ export MQTT_PWD="mqtt password"
 $ python3 solarflow-bt-manager.py -i -b 192.168.1.245
 ```
 
